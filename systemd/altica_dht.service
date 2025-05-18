@@ -1,0 +1,13 @@
+[Unit]
+Description=Altica libp2p DHT Bootstrap Node
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/altica_dht
+WorkingDirectory=/opt/altica_dht
+Restart=on-failure
+User=altica_dht
+Environment=GOMAXPROCS=1
+
+[Install]
+WantedBy=multi-user.target
