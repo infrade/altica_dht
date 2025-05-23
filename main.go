@@ -63,7 +63,7 @@ func main() {
 	identify.NewIDService(h)
 
 	// Start DHT in server mode
-	kademliaDHT, err := dht.New(ctx, h, dht.Mode(dht.ModeServer))
+	kademliaDHT, err := dht.New(ctx, h, dht.Mode(dht.ModeServer), dht.ProtocolPrefix("/altica"))
 	if err != nil {
 		log.Fatalf("Failed to start DHT: %v", err)
 	}
